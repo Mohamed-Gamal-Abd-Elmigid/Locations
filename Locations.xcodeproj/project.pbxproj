@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0458C11624B7482900505FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C11524B7482900505FD7 /* AppDelegate.swift */; };
-		0458C11824B7482900505FD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C11724B7482900505FD7 /* SceneDelegate.swift */; };
 		0458C11A24B7482900505FD7 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C11924B7482900505FD7 /* CurrentLocationViewController.swift */; };
 		0458C11C24B7482900505FD7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458C11B24B7482900505FD7 /* SecondViewController.swift */; };
 		0458C11F24B7482900505FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0458C11D24B7482900505FD7 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		0458C11224B7482900505FD7 /* Locations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0458C11524B7482900505FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0458C11724B7482900505FD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0458C11924B7482900505FD7 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		0458C11B24B7482900505FD7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0458C11E24B7482900505FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				0458C11524B7482900505FD7 /* AppDelegate.swift */,
-				0458C11724B7482900505FD7 /* SceneDelegate.swift */,
 				0458C11924B7482900505FD7 /* CurrentLocationViewController.swift */,
 				0458C11B24B7482900505FD7 /* SecondViewController.swift */,
 				0458C11D24B7482900505FD7 /* Main.storyboard */,
@@ -148,7 +145,6 @@
 				0458C11A24B7482900505FD7 /* CurrentLocationViewController.swift in Sources */,
 				0458C12224B7482900505FD7 /* Locations.xcdatamodeld in Sources */,
 				0458C11624B7482900505FD7 /* AppDelegate.swift in Sources */,
-				0458C11824B7482900505FD7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
