@@ -22,6 +22,8 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
     let locationManager = CLLocationManager()
     var location : CLLocation?
     
+    
+    
     var updatingLocation = false
     var lastLocationError : Error?
     
