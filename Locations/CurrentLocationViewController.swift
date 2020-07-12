@@ -84,6 +84,9 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
         
     }
     
+    
+    
+    
      func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let newLocation = locations.last!
             print("did update location \(newLocation)")
