@@ -85,6 +85,7 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
     }
     
     
+
     
     
      func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -150,6 +151,9 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
                 
             }
         }
+    
+    
+    
     func stopLocationManager()
     {
         if updatingLocation {
