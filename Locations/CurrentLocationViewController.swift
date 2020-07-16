@@ -42,6 +42,16 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
         updateLabels()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationController?.isNavigationBarHidden = false
+    }
         
     //CLLocationManagerDelegate
     // Handel Error
@@ -295,6 +305,15 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
         alert.addAction(action)
         present(alert , animated: true)
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TagLocation"
+        {
+            let controller = segue.destination as! LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+        }
     }
 }
 
