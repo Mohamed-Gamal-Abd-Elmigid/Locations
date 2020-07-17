@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 // I Have prblem in uploading Here 
 
 class CurrentLocationViewController: UIViewController , CLLocationManagerDelegate
@@ -23,7 +24,8 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
     let locationManager = CLLocationManager()
     var location : CLLocation?
     
-    
+    var managedObjectContext: NSManagedObjectContext!
+
     
     var updatingLocation = false
     var lastLocationError : Error?
@@ -313,6 +315,7 @@ class CurrentLocationViewController: UIViewController , CLLocationManagerDelegat
             let controller = segue.destination as! LocationDetailsViewController
             controller.coordinate = location!.coordinate
             controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
         }
     }
 }

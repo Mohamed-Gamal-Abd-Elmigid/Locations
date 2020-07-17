@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
     private let dateFormatter: DateFormatter =
     {
@@ -32,7 +33,10 @@ class LocationDetailsViewController: UITableViewController
         
         var categoryName = "No Category"
 
+            var managedObjectContext: NSManagedObjectContext!
     
+            var date = Date()
+
     
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -54,7 +58,7 @@ class LocationDetailsViewController: UITableViewController
                 addressLabel.text = "No Address Found"
             }
             
-            dateLabel.text = format(date: Date())
+            dateLabel.text = format(date: date)
             
             
             let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -122,6 +126,23 @@ class LocationDetailsViewController: UITableViewController
             execute:
                 {   hudView.hide()
                     self.navigationController?.popViewController(animated: true) })
+
+            
+            // Save Location
+            let location = Location(context: managedObjectContext)
+
+            location.locationDescription = descriptionTextView.text
+            location.category = categoryName
+            location.latitude = coordinate.latitude
+            location.longitude = coordinate.longitude
+            location.date = date
+            location.placemark = placemark
+
+            do
+            {try managedObjectContext.save() }
+            catch
+            {fatalError("Error : \(error)")}
+
                 
         }
         @IBAction func cancel() {
@@ -133,6 +154,7 @@ class LocationDetailsViewController: UITableViewController
         {
             let controller = segue.destination as! CategoryPickerViewController
             controller.selectedCategoryName = categoryName
+            
         }
     }
     
