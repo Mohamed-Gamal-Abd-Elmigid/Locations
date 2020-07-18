@@ -37,11 +37,31 @@ class LocationDetailsViewController: UITableViewController
     
             var date = Date()
 
+            var locationToEdit : Location?
+            {
+                didSet {
+                    if let location = locationToEdit
+                    {
+                        descriptioinText = location.locationDescription
+                        categoryName = location.category
+                        date = location.date!
+                        coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                        placemark = location.placemark
+                    }
+                }
+            }
+            var descriptioinText = ""
+            
     
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            descriptionTextView.text = ""
+            if let location = locationToEdit
+            {
+                title  = "Edit Location"
+            }
+            
+            descriptionTextView.text = descriptioinText
             categoryLabel.text = ""
             
             categoryLabel.text = categoryName
@@ -120,7 +140,16 @@ class LocationDetailsViewController: UITableViewController
         @IBAction func done() {
        
             let hudView = HudView.hud(inView: navigationController!.view, animated: true)
+           
+            let location: Location
+            if let temp = locationToEdit {
+            hudView.text = "Updated"
+            location = temp
+            } else {
             hudView.text = "Tagged"
+            location = Location(context: managedObjectContext)
+            }
+            
             let delayInSeconds = 0.6
             DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds,
             execute:
@@ -129,7 +158,7 @@ class LocationDetailsViewController: UITableViewController
 
             
             // Save Location
-            let location = Location(context: managedObjectContext)
+           // let location = Location(context: managedObjectContext) <<<<<<<<<<_---------------<<<<<<<<<,,--------
 
             location.locationDescription = descriptionTextView.text
             location.category = categoryName
