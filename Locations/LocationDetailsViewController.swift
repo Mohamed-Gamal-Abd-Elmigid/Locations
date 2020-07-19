@@ -198,4 +198,3 @@ class LocationDetailsViewController: UITableViewController
     
 }
         
-

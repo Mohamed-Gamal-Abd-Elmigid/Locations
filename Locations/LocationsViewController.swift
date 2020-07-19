@@ -122,6 +122,7 @@ class LocationsViewController: UITableViewController
             //let location = locations[indexPath.row]
                 let location = fetchedResultsController.object(at: indexPath)
                 controller.locationToEdit = location
+                
             }
         }
     }
